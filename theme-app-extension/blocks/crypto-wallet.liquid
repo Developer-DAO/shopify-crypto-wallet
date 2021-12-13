@@ -1,0 +1,40 @@
+<button 
+	id="crypto-wallet-button" 
+	style="
+		background-color: {{block.settings.button_color}};
+		color: {{block.settings.button_text_color}};
+	"
+>
+	{{block.settings.button_label}}
+</button>
+
+{% schema %}
+{
+	"name": "Connect Wallet",
+	"target": "section",
+	"javascript": "crypto-wallet.js",
+	"stylesheet": "style.css",
+	"settings":[
+		{
+			"type": "text",
+			"id": "button_label",
+			"label": "Button Label",
+			"default": "Connect with a Wallet"
+		},
+		{
+			"type": "color",
+			"id": "button_color",
+			"label": "Button Color",
+			"default": "#000000"
+		},
+		{
+			"type": "color",
+			"id": "button_text_color",
+			"label": "Button Text Color",
+			"default": "#FFFFFF"
+		}
+		
+
+	]
+}
+{% endschema %}

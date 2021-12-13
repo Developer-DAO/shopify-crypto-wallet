@@ -41,3 +41,11 @@ In your Shopify App settings:
 - `npm run dev`
 - Click `Select store` under `Test your app` in Shopify App settings
 - This should prompt you to install the app in your development store and open it in an admin dashboard. Common error is `The redirect URI is not whitelisted`, in that case you need to update `NGROK URL` in `Allowed redirection URL(s)`
+
+## Theme App Extension
+
+Example of a theme app extension: https://github.com/Shopify/theme-extension-getting-started
+
+- `cd theme-app-extension` and `shopify extension register`, choose `THEME_APP_EXTENSION` type
+- `npm run create-extension-js-bundle` to bundle the `crypto-wallet.js` file and put it into `theme-app-extension/assets` folder
+- `shopify extension push` and follow the instructions to install extension on the shopify theme or look at the Demo: https://www.loom.com/share/9c21c12fc567417e9f3e6e910b65f874
