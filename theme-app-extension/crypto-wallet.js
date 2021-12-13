@@ -25,6 +25,18 @@ async function connectWallet() {
   const provider = new Web3Provider(connection);
   const accounts = await provider.listAccounts();
   console.log({ accounts });
+  if (accounts.length === 0) return;
+
+  const discountForAccount = await getDiscountCodeForAccount(accounts);
+  if (!discountForAccount) return;
+  alert("Discount has been applied!");
+  window.location.href = `/discount/${discountForAccount}`; // this will apply the discount
+}
+
+async function getDiscountCodeForAccount(accounts) {
+  // TODO: check if account is eligible for discount on the backend
+  // Generate one time unique discount code using https://shopify.dev/api/admin-rest/2021-07/resources/discountcode#[post]/admin/api/2021-07/price_rules/%7Bprice_rule_id%7D/discount_codes.json
+  return "pepe";
 }
 
 const button = document.querySelector("#crypto-wallet-button");
