@@ -1,6 +1,7 @@
 import { Web3Provider } from "@ethersproject/providers";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
+import ABI from './blocks/abi';
 
 async function getWeb3Modal() {
   const web3Modal = new Web3Modal({
@@ -36,6 +37,10 @@ async function connectWallet() {
 async function getDiscountCodeForAccount(accounts) {
   // TODO: check if account is eligible for discount on the backend
   // Generate one time unique discount code using https://shopify.dev/api/admin-rest/2021-07/resources/discountcode#[post]/admin/api/2021-07/price_rules/%7Bprice_rule_id%7D/discount_codes.json
+
+  // const contractAddress = 'GET FROM BACKEND';
+  // const erc20 = new ethers.Contract(contractAddress, ABI, provider);
+  // const balance = await erc20.balanceOf(accounts)
   return "pepe";
 }
 
